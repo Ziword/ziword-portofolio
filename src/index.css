@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
+
+  @keyframes gradient {
+    0%,
+    100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #020617;
+    scroll-behavior: smooth;
+  }
+
+  .dark {
+    --background: #020617;
+    --foreground: #f8fafc;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background: transparent;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+body {
+  @apply transition-colors duration-1000 ease-in-out bg-slate-50 dark:bg-[#020617];
+}
+
+/* Tech Background Grid */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.dark .bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  @apply tracking-tighter font-extrabold;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-primary-500 transition-colors;
+}
+
+.glass-morphism {
+  @apply backdrop-blur-[60px] bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] shadow-lg shadow-slate-200/50 dark:shadow-none;
+}
+
+.text-monumental {
+  font-family: var(--font-display);
+  @apply font-extrabold leading-[0.80] tracking-[-0.06em] uppercase;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-400 via-violet-500 to-indigo-600 bg-clip-text text-transparent;
+}
+
+.tech-tag {
+  @apply text-xs font-semibold tracking-wide border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-white/[0.05] backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 text-slate-700 dark:text-slate-300;
+}
+
+section {
+  @apply relative flex flex-col justify-center;
+}
+
+/* Magnetic hover effect for links */
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.magnetic-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Line animation */
+.line-grow {
+  transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}

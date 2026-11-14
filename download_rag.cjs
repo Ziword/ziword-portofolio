@@ -1,0 +1,26 @@
+const fs = require('fs');
+const https = require('https');
+const path = require('path');
+
+const dir = path.join(__dirname, 'src', 'assets', 'images', 'projects');
+
+function download(url, filePath) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302) {
+        download(res.headers.location, filePath).then(resolve).catch(reject);
+      } else if (res.statusCode === 200) {
+        const stream = fs.createWriteStream(filePath);
+        res.pipe(stream);
+        stream.on('finish', () => {
+          stream.close();
+          resolve();
+        });
+      } else {
+        reject(new Error('Failed with status: ' + res.statusCode));
+      }
+    }).on('error', reject);
+  });
+}
+
+download('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=75', path.join(dir, 'pt_merak_rag.jpg')).then(() => console.log('Done')).catch(console.error);

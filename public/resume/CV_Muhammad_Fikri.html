@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Muhammad Fikri</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm 13mm;
+    }
+
+    body {
+      font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+      font-variant-ligatures: none;
+      -webkit-font-feature-settings: "liga" 0;
+      font-feature-settings: "liga" 0;
+      text-rendering: geometricPrecision;
+      color: #18181b;
+      background: #f4f4f5;
+      font-size: 8.1pt;
+      line-height: 1.36;
+    }
+
+    a {
+      color: #18181b;
+      text-decoration: none;
+      border-bottom: 0.5px dotted #71717a;
+    }
+
+    a:hover {
+      border-bottom-style: solid;
+    }
+
+    .sheet {
+      max-width: 794px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 26px 34px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .header {
+      border-bottom: 1.25px solid #18181b;
+      padding-bottom: 6px;
+      margin-bottom: 9px;
+    }
+
+    h1 {
+      font-size: 17pt;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: #18181b;
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .target-role {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: #3f3f46;
+      margin-bottom: 3px;
+    }
+
+    .contact-line {
+      font-size: 7.7pt;
+      color: #52525b;
+      line-height: 1.4;
+    }
+
+    .sep {
+      color: #a1a1aa;
+      padding: 0 4px;
+    }
+
+    .section {
+      margin-bottom: 9px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 8.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.55px;
+      color: #18181b;
+      border-bottom: 0.75px solid #d4d4d8;
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+
+    .summary-text {
+      font-size: 8pt;
+      color: #27272a;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    .employer-group {
+      margin-bottom: 7px;
+    }
+
+    .employer-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .employer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .employer-name {
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: #18181b;
+    }
+
+    .employer-loc {
+      font-size: 7.6pt;
+      color: #52525b;
+    }
+
+    .job-entry {
+      margin-bottom: 6px;
+    }
+
+    .job-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-size: 8.1pt;
+      font-weight: 700;
+      color: #27272a;
+    }
+
+    .job-period {
+      font-size: 7.6pt;
+      font-weight: 700;
+      color: #52525b;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    ul {
+      padding-left: 13px;
+      list-style-type: disc;
+      margin-bottom: 0;
+    }
+
+    li {
+      font-size: 7.9pt;
+      color: #27272a;
+      line-height: 1.36;
+      margin-bottom: 2px;
+      text-align: left;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2.8px;
+      font-size: 7.85pt;
+    }
+
+    .skill-row {
+      display: flex;
+      line-height: 1.34;
+    }
+
+    .skill-label {
+      width: 158px;
+      font-weight: 700;
+      color: #18181b;
+      flex-shrink: 0;
+    }
+
+    .skill-desc {
+      color: #27272a;
+    }
+
+    .edu-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5px;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 8.05pt;
+      color: #18181b;
+    }
+
+    .edu-school {
+      font-size: 7.7pt;
+      color: #52525b;
+    }
+
+    .edu-year {
+      font-size: 7.6pt;
+      font-weight: 700;
+      color: #52525b;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .cert-line {
+      font-size: 7.65pt;
+      color: #27272a;
+      line-height: 1.38;
+      margin-top: 2.5px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      a {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header class="header">
+      <h1>Muhammad Fikri</h1>
+      <div class="target-role">IT Supervisor: Research, Database, Infrastructure, and Enterprise Software Engineering</div>
+      <div class="contact-line">
+        <div>Surabaya, East Java, Indonesia<span class="sep">|</span><a href="mailto:muhammad.fikri.amd@gmail.com">muhammad.fikri.amd@gmail.com</a></div>
+        <div><a href="https://www.linkedin.com/in/ziword">linkedin.com/in/ziword</a><span class="sep">|</span><a href="https://github.com/Ziword">github.com/Ziword</a><span class="sep">|</span><a href="https://ziword.github.io/ziword-portofolio/">ziword.github.io/ziword-portofolio</a></div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">
+        IT Supervisor for Research, Database, and System Administration with over 5 years of production experience across multi-plant manufacturing and transactional systems. Specialized in multi-engine database administration and query optimization (Oracle 11g/12c/19c, PostgreSQL, MySQL, SQL Server), virtualization infrastructure (OLVM, OVM, VMware ESXi, Docker, OpenShift), ERP middleware (Oracle EBS R12, Odoo), and industrial IoT integration (PLC Modbus/TCP, GPS telematics, UHF RFID, LiDAR). Led zero-data-loss production migrations, cut report query execution latency by 45%, and reduced material recording discrepancies by 98%.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <div class="employer-group">
+        <div class="employer-header">
+          <div class="employer-name">PT Merak Jaya Beton</div>
+          <div class="employer-loc">Surabaya, East Java, Indonesia</div>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <div class="job-title">IT Supervisor: Research, Database, and System Administration</div>
+            <div class="job-period">Aug 2024 - Present</div>
+          </div>
+          <ul>
+            <li>Lead the Research, Database, and System Administration team in code reviews, cross-department UAT, technical roadmap planning, and daily SLA compliance across multi-plant operations.</li>
+            <li>Administer multi-engine relational and operational databases (Oracle DB 11g/12c/19c, PostgreSQL, MySQL, SQL Server, Redis, MongoDB); led Oracle 12c-to-19c and EBS R12 (12.2.4 to 12.2.14) production migrations with zero data loss, reducing query latency by 45% via execution plan and index tuning.</li>
+            <li>Architect and maintain enterprise virtualization clusters on OLVM, OVM, and VMware ESXi with NAS/SAN storage, Docker/OpenShift workloads, Nginx reverse proxies, and scheduled RMAN/DataPump and pg_dump disaster recovery verification drills.</li>
+            <li>Directed the zero-downtime corporate email migration from hMailServer to Carbonio CE HA clustering, including DNS and authentication hardening (DKIM, SPF, DMARC, PTR) and ongoing web/server vulnerability remediation.</li>
+            <li>Spearhead plant automation and internal platforms: multi-plant workforce operations (Merak WorkHub), enterprise WhatsApp gateway integrated with Oracle EBS/HRIS, LiDAR drone volumetric stockpile scanning, FMCW radar silo sensors, and solar GPS fuel sensors.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <div class="job-title">Enterprise Software Engineer (Full-Stack and Systems Integration)</div>
+            <div class="job-period">Nov 2021 - Aug 2024</div>
+          </div>
+          <ul>
+            <li>Built internal web applications and RESTful API middleware (React, Node.js, TypeScript, Express.js) bridging multi-level approvals and warehouse workflows with Oracle EBS R12 modules (AP, AR, Inventory, OM, Manufacturing).</li>
+            <li>Engineered a Python (Django) Modbus/TCP and RS-232 integration bridge linking factory PLC machinery and weighbridges directly to Oracle EBS and PostgreSQL with fixed-point shrinkage checks, cutting stock recording discrepancies by 98%.</li>
+            <li>Developed a real-time GPS fleet monitoring platform (Next.js, Socket.io, MongoDB, TimescaleDB) backed by a self-hosted OSRM routing server on Linux, replacing external map API dependencies.</li>
+            <li>Delivered containerized Odoo ERP with custom project workflows, UHF RFID automated vehicle scanning, Android face-recognition attendance (Java/Kotlin), and systematic security audits.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="employer-group">
+        <div class="employer-header">
+          <div class="employer-name">PT Todis Karya Anak Bangsa</div>
+          <div class="employer-loc">Surabaya, East Java, Indonesia</div>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <div class="job-title">Systems and Backend Engineer (Part-Time Contract)</div>
+            <div class="job-period">Aug 2022 - Jun 2023</div>
+          </div>
+          <ul>
+            <li>Architected transactional backend services (NestJS, TypeScript, PostgreSQL) for the Haba retail platform with strict ACID isolation, RBAC, distributed inventory updates, payment gateway integration, and Jest regression tests.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Selected Engineering Projects</div>
+      <ul>
+        <li><strong>Universal Shipping Tracking Platform (GitHub):</strong> Multi-carrier tracking gateway (TypeScript, Fastify, Prisma, PostgreSQL, Redis, BullMQ) implementing ISO 6346 container check-digit verification, 3-state circuit breakers, adaptive caching, and HMAC-SHA256 webhooks.</li>
+        <li><strong>High-Throughput Financial Ledger and QRIS Gateway:</strong> Go, Node.js, PostgreSQL, and Redis engine implementing dynamic EMVCo Tag 54 generation, distributed atomic locking, and double-entry ledger accounting via row-level locking (SELECT FOR UPDATE).</li>
+        <li><strong>Oracle EBS R12 Integrated Portal and WorkHub:</strong> Unified multi-plant operations, offline shift sync, and ERP approval middleware (Flutter, NestJS, React, PostgreSQL, Oracle EBS SSO, Docker).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Technical Competencies</div>
+      <div class="skills-block">
+        <div class="skill-row">
+          <div class="skill-label">Databases and Tuning:</div>
+          <div class="skill-desc">Oracle Database (11g/12c/19c), PostgreSQL, MySQL, SQL Server, TimescaleDB, Redis, MongoDB, PL/SQL, Query Execution Plan Tuning, Partitioning, RMAN, DataPump, PITR</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Infra and Virtualization:</div>
+          <div class="skill-desc">OLVM, OVM, VMware ESXi, Docker, OpenShift, Linux (Oracle Linux, Ubuntu, CentOS), Windows Server, NAS/SAN Storage, Carbonio CE, Nginx, Zabbix, Prometheus, Grafana</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Software and Integration:</div>
+          <div class="skill-desc">TypeScript, JavaScript, Python, Go, SQL, Dart, PHP, Java/Kotlin, Node.js (NestJS, Express), Django, FastAPI, React, Next.js, Flutter, REST APIs, WebSockets, BullMQ</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">ERP, IoT and Security:</div>
+          <div class="skill-desc">Oracle EBS R12, Odoo, Modbus/TCP, RS-232, UHF RFID, FMCW Radar, GPS/OSRM, LiDAR UAV Surveying, Server Hardening, RBAC, DKIM/SPF/DMARC</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Education, Certifications, and Training</div>
+      <div class="edu-block">
+        <div>
+          <span class="edu-degree">Associate Degree (D3) in Information Systems</span><br />
+          <span class="edu-school">Institut Teknologi dan Bisnis STIKOM Surabaya (GPA: 3.84 / 4.00, Cum Laude)</span>
+        </div>
+        <div class="edu-year">Aug 2018 - Nov 2021</div>
+      </div>
+      <div class="cert-line">
+        <strong>Certifications:</strong> AWS Cloud Practitioner Essentials (AWS, Nov 2026)<span class="sep">|</span>Agile Explorer (IBM, Sep 2026)<span class="sep">|</span>Certified Android Developer (Java/Kotlin)
+      </div>
+      <div class="cert-line">
+        <strong>Training and IP:</strong> Oracle Data Center Operations Foundations (Professional Training, Oct 2026)<span class="sep">|</span>Registered IP Copyright (Be-Health Application)
+      </div>
+    </section>
+  </div>
+</body>
+</html>
